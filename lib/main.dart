@@ -60,7 +60,9 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Text("Change Calculator", style: TextStyle(fontFamily: 'maa' , fontSize: 48, fontWeight: FontWeight.bold , fontStyle: FontStyle.italic, color: Colors.deepPurple , backgroundColor: Colors.blue)),
             SizedBox(height: 20),
-            Image.asset("assets/catmeme.jpg" , height: 200),
+            Image.asset("assets/catmeme.jpg" , height: 100),
+            SizedBox(height: 20),
+            Image.network('https://media.tenor.com/ldDoV7iwmkgAAAAj/kurukuru-kururing.gif' , height: 100),
             SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.all(8.0),
