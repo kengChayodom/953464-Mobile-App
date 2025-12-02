@@ -59,7 +59,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             Text("Change Calculator", style: TextStyle(fontFamily: 'maa' , fontSize: 48, fontWeight: FontWeight.bold , fontStyle: FontStyle.italic, color: Colors.deepPurple , backgroundColor: Colors.blue)),
+            SizedBox(height: 20),
             Image.asset("assets/catmeme.jpg" , height: 200),
+            SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: priceTextField(),
