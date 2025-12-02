@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Text("Change Calculator", style: TextStyle(fontFamily: 'maa' , fontSize: 48, fontWeight: FontWeight.bold , fontStyle: FontStyle.italic, color: Colors.deepPurple , backgroundColor: Colors.blue)),
+            Text("Change Calculator", style: TextStyle(fontFamily: 'maa' , fontSize: 30, fontWeight: FontWeight.bold , fontStyle: FontStyle.italic, color: Colors.deepPurple , backgroundColor: Colors.blue)),
             SizedBox(height: 20),
             Image.asset("assets/catmeme.jpg" , height: 100),
             SizedBox(height: 20),
