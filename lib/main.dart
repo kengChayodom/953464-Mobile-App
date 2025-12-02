@@ -49,67 +49,73 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Column(
-        children: [
-          priceTextField(),
-          amountTextField(),
-          calculateButton(),
-          showTotalText(),
-          receiveMoneyTextField(),
-          changeCalculateButton(),
-          showChangeText(),
-        ]
-      )
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Text("Change Calculator", style: TextStyle(fontFamily: 'maa' , fontSize: 48, fontWeight: FontWeight.bold , fontStyle: FontStyle.italic, color: Colors.deepPurple , backgroundColor: Colors.blue)),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: priceTextField(),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: amountTextField(),
+            ),
+            calculateButton(),
+            showTotalText(),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: receiveMoneyTextField(),
+            ),
+            changeCalculateButton(),
+            showChangeText(),
+          ],
+        ),
+      ),
     );
   }
 
+ 
+
   Widget priceTextField(){
-    return  Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: TextField(
+    return TextField(
         controller: price,
         decoration: InputDecoration(
           border: OutlineInputBorder(),
           labelText: "price per item",
         ),
         keyboardType: TextInputType.number,
-      ),
-    );
+      );
   }
 
   Widget amountTextField(){
-    return  Padding(
-      padding: const EdgeInsets.all(8.0),
-      
-      child: TextField(
-         controller: amount,
-        decoration: InputDecoration(
-          border: OutlineInputBorder(),
-          labelText: "amount of items",
-        ),
-        keyboardType: TextInputType.number,
+    return  TextField(
+      controller: amount,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(),
+        labelText: "amount of items",
       ),
+      keyboardType: TextInputType.number,
     );
   }
 
   Widget calculateButton() {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: ElevatedButton(
+    return ElevatedButton(
         onPressed: () {
           if(price.text.isNotEmpty && amount.text.isNotEmpty){
             setState(() {
               _total = double.parse(price.text) * double.parse(amount.text);
             });
           }
-        }, child: Text("Calculate Total")),
-    );
+        }, 
+        child: Text("Calculate Total"),
+        );
   }
 
   Widget showTotalText() {
@@ -117,23 +123,18 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget receiveMoneyTextField(){
-    return  Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: TextField(
+    return TextField(
         controller: change,
         decoration: InputDecoration(
           border: OutlineInputBorder(),
           labelText: "get money",
         ),
         keyboardType: TextInputType.number,
-      ),
-    );
+      );
   }
 
   Widget changeCalculateButton() {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: ElevatedButton(
+    return ElevatedButton(
         onPressed: () {
           if(change.text.isNotEmpty){
 
@@ -149,7 +150,8 @@ class _MyHomePageState extends State<MyHomePage> {
             }
           }
 
-        }, child: Text("Calculate Change")),
+        },
+      child: Text("Calculate Change"),
     );
   }
 
