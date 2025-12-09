@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
+        child: ListView(
           children: [
             Text("Change Calculator", style: TextStyle(fontFamily: 'maa' , fontSize: 30, fontWeight: FontWeight.bold , fontStyle: FontStyle.italic, color: Colors.deepPurple , backgroundColor: Colors.blue)),
             SizedBox(height: 20),
