@@ -13,15 +13,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    
     return MaterialApp(
-     title: 'Tui Shop',
-     theme: ThemeData(
-      colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-     ),
-     home: const MyHomePage(title: 'Pattama Shop'),
-     debugShowCheckedModeBanner: false,
-   );
+      title: 'Tui Shop',
+      theme: ThemeData(
+        colorScheme: .fromSeed(
+          seedColor: const Color.fromARGB(255, 218, 19, 191),
+        ),
+      ),
+      home: const MyHomePage(title: 'Calculate Change'),
+    );
   }
 }
 
@@ -36,30 +36,35 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  int _currentindex = 0;
-  final tabs = [HomePage(),CalculatePage(), ContactPage()];
-
+  int _currentIndex = 0;
+  final tabs = [HomePage(), CalculatePage(), ContactPage()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Calculate Application"),
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
       ),
-      body: tabs[_currentindex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentindex ,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home) , label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.calculate), label: "Cal"),
-          BottomNavigationBarItem(icon: Icon(Icons.contact_mail), label: "Contact")
-        ],
-        onTap: (index){
-          setState(() {
-            print(index);
-            _currentindex = index;
-          });
-        },
-        ),
+      body:
+      tabs[_currentIndex],bottomNavigationBar: BottomNavigationBar(currentIndex: _currentIndex,items: [
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+        BottomNavigationBarItem(icon: Icon(Icons.calculate), label: "Calculation"),
+        BottomNavigationBarItem(icon: Icon(Icons.contact_page), label: "Contact")
+      ],
+      onTap: (index){
+        setState(() {
+          // print(index);
+          _currentIndex = index;
+        });
+      },
+      
+      
+      ),
     );
+   
   }
+
+
+
+  
 }
