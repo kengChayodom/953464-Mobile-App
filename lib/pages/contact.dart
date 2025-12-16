@@ -12,7 +12,14 @@ class _ContactPageState extends State<ContactPage> {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        
+        Center(
+          child: Column(
+            children: [
+              Text("Aj. Tui"),
+              Text("@CAMT ROOM414")
+            ],
+          ),
+        )
       ],
     );
   }
