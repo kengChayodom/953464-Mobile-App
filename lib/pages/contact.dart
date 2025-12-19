@@ -1,3 +1,4 @@
+import 'package:firstapp/pages/calc.dart';
 import 'package:flutter/material.dart';
 
 class ContactPage extends StatefulWidget {
@@ -15,7 +16,9 @@ class _ContactPageState extends State<ContactPage> {
   Widget build(BuildContext context) {
     return ListView.builder(itemBuilder:  (context, index){
       return ListTile(
-        onTap: (){},
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const CalculatePage()));
+        },
         leading: Icon(Icons.access_alarm),
         title: Text(mydata[index]),
       );

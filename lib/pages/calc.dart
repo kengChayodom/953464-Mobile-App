@@ -18,7 +18,9 @@ class _CalculatePageState extends State<CalculatePage> {
   
   @override
   Widget build(BuildContext context) {
-   return ListView(
+   return Scaffold(
+    body: Center(
+      child: ListView(
            children: [
             Text("Change Calculator", style: TextStyle(fontFamily: 'maa' , fontSize: 30, fontWeight: FontWeight.bold , fontStyle: FontStyle.italic, color: Colors.deepPurple , backgroundColor: Colors.blue)),
             SizedBox(height: 20),
@@ -44,7 +46,11 @@ class _CalculatePageState extends State<CalculatePage> {
             showChangeText(),
           ],
     
-    );
+    ),
+    ),
+   );
+   
+    
   }
 
    Widget priceTextField(){
