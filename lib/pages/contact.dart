@@ -8,19 +8,20 @@ class ContactPage extends StatefulWidget {
 }
 
 class _ContactPageState extends State<ContactPage> {
+
+  final items = List<String>.generate(1000, (i)=>"Item $i");
+  List mydata = ['apple','banana','papaya'];
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        Center(
-          child: Column(
-            children: [
-              Text("Aj. Tui"),
-              Text("@CAMT ROOM414")
-            ],
-          ),
-        )
-      ],
+    return ListView.builder(itemBuilder:  (context, index){
+      return ListTile(
+        onTap: (){},
+        leading: Icon(Icons.access_alarm),
+        title: Text(mydata[index]),
+      );
+    },
+    itemCount: mydata.length
     );
+
   }
 }
