@@ -1,3 +1,4 @@
+import 'package:firstapp/pages/detail.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -35,7 +36,7 @@ class _HomePageState extends State<HomePage> {
   Widget MyBox(String title, String subtitle , String image_url){
       return Container(
         padding: EdgeInsets.all(20),
-        height: 150,
+        // height: 150,
         decoration: BoxDecoration(
           color: Colors.greenAccent[200],
           borderRadius: BorderRadius.circular(24),
@@ -63,7 +64,10 @@ class _HomePageState extends State<HomePage> {
               color: Colors.white ),),
             SizedBox(height: 20,),
             TextButton(
-              onPressed: (){},
+              onPressed: (){
+                print("next page >>");
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsPage()));
+              },
               child: Text("Read more"),
             )
         ],),
