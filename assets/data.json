@@ -1,0 +1,23 @@
+[
+    {
+        "title":"What is the computer",
+        "subtitle":"A computer is a things to calculate and and for any other works",
+        "image_url":"https://static.vecteezy.com/system/resources/thumbnails/040/890/255/small/ai-generated-empty-wooden-table-on-the-natural-background-for-product-display-free-photo.jpg"
+        ,"detail":"A computer is a machine that can be programmed to automatically carry out sequences of arithmetic or logical operations (computation)."
+    }
+    ,
+    {
+        "title":"What is Flutter",
+        "subtitle":"Flutter is an open-source UI framework",
+        "image_url":"https://cdn.pixabay.com/photo/2024/02/15/14/00/man-8575459_1280.jpg"
+        ,"detail":"Flutter is an open-source UI framework for building natively compiled applications mobile, web, and desktop from a single codebase using the Dart programming language."
+       
+    },
+
+    {
+        "title":"What is Dart",
+        "subtitle":"Dart is a versatile",
+        "image_url":"https://m.media-amazon.com/images/I/71dNtlbI7fL._AC_UF1000,1000_QL80_.jpg"
+        ,"detail":"Dart is a versatile, Google-developed programming language for building fast, cross-platform apps (mobile, web, desktop, server)."
+    }
+]

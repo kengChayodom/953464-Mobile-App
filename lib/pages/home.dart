@@ -1,6 +1,6 @@
 import 'package:firstapp/pages/detail.dart';
 import 'package:flutter/material.dart';
-
+import 'dart:convert';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -13,28 +13,33 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Padding(
         padding: const EdgeInsets.all(20),
-        child:  ListView(
-      children: [
-        MyBox("What is the computer"
-        ,"A computer is a machine that can be programmed to automatically carry out sequences of arithmetic or logical operations (computation)."
-        ,"https://static.vecteezy.com/system/resources/thumbnails/040/890/255/small/ai-generated-empty-wooden-table-on-the-natural-background-for-product-display-free-photo.jpg"),
-        SizedBox(height: 20,),
-        MyBox("What is Flutter"
-        ,"Flutter is an open-source UI framework for building natively compiled applications mobile, web, and desktop from a single codebase using the Dart programming language. "
-        ,"https://cdn.pixabay.com/photo/2024/02/15/14/00/man-8575459_1280.jpg"),
-        SizedBox(height: 20,),
-        MyBox("What is Dart "
-        ,"Dart is a versatile, Google-developed programming language for building fast, cross-platform apps (mobile, web, desktop, server)."
-        ,"https://m.media-amazon.com/images/I/71dNtlbI7fL._AC_UF1000,1000_QL80_.jpg"),
-        SizedBox(height: 20,),
-      ],
-    ),
+        child:  FutureBuilder(
+          builder: (context , snapshot){
+            
+            var data = json.decode(snapshot.data.toString());
+            return ListView.builder(itemBuilder: (BuildContext context, int index){
+              return MyBox(data[index]['title'],data[index]['subtitle'],data[index]['image_url'],data[index]['detail']);
+            },
+            itemCount: data.length,
+          
+            
+            );
+
+          },
+          future: DefaultAssetBundle.of(context).loadString('data.json'),
+        )
       );
 
     
   }
-  Widget MyBox(String title, String subtitle , String image_url){
+  Widget MyBox(String title, String subtitle , String image_url , String detail){
+    var v1,v2,v3,v4;
+    v1 = title;
+    v2 = subtitle;
+    v3 = image_url;
+    v4 = detail;
       return Container(
+        margin: EdgeInsets.all(20),
         padding: EdgeInsets.all(20),
         // height: 150,
         decoration: BoxDecoration(
@@ -66,7 +71,7 @@ class _HomePageState extends State<HomePage> {
             TextButton(
               onPressed: (){
                 print("next page >>");
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsPage(v1,v2,v3,v4)));
               },
               child: Text("Read more"),
             )
